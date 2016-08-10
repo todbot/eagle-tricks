@@ -1,0 +1,22 @@
+
+int hor = 1; 
+int ver = 1; 
+string script_out = "\n\n\nhere is some text\n\n\n";
+
+int Result = dlgDialog("Big Text Field") {
+  dlgHBoxLayout { 
+    dlgSpacing(90); 
+    dlgLabel("Here is a text field");
+    dlgSpacing(90);
+  } 
+  dlgVBoxLayout {
+    dlgSpacing(90); 
+    dlgTextView(script_out);
+    dlgSpacing(90); 
+  }
+  dlgHBoxLayout {
+    dlgStretch(1); 
+    dlgPushButton("+OK") dlgAccept(); 
+    dlgPushButton("Cancel") dlgReject();
+ }
+};

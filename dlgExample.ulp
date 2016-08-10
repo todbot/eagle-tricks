@@ -1,0 +1,42 @@
+
+int hor = 1; 
+int ver = 1; 
+string fileName;
+int Result = dlgDialog("Enter Parameters") {
+  dlgHBoxLayout { 
+    dlgStretch(1); 
+    dlgLabel("This is a simple dialog");
+    dlgStretch(1);
+  } 
+  dlgHBoxLayout {
+    dlgGroup("Horizontal") { 
+      dlgRadioButton("&Top", hor); 
+      dlgRadioButton("&Center", hor); 
+      dlgRadioButton("&Bottom", hor); 
+    }
+    dlgGroup("Vertical") { 
+      dlgRadioButton("&Left", ver);
+      dlgRadioButton("C&enter", ver);
+      dlgRadioButton("&Right", ver);
+    }
+  } 
+  dlgHBoxLayout {
+    dlgLabel("File &name:"); 
+    dlgStringEdit(fileName); 
+    dlgPushButton("Bro&wse") {
+      fileName = dlgFileOpen("Select a file", fileName);
+    }
+  } 
+  dlgGridLayout {
+    dlgCell(0, 0) dlgLabel("Row 0/Col 0");
+    dlgCell(1, 0) dlgLabel("Row 1/Col 0"); 
+    dlgCell(0, 1) dlgLabel("Row 0/Col 1"); 
+    dlgCell(1, 1) dlgLabel("Row 1/Col 1");
+  }
+  dlgSpacing(50); 
+  dlgHBoxLayout {
+    dlgStretch(1); 
+    dlgPushButton("+OK") dlgAccept(); 
+    dlgPushButton("Cancel") dlgReject();
+ }
+};
